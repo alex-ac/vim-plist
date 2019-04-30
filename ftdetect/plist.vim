@@ -1,1 +1,1 @@
-au BufNewFile,BufRead *.plist set filetype=plist
+au BufNewFile,BufRead *.plist setfiletype xml plist
