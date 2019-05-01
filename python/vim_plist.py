@@ -20,6 +20,9 @@ def dump_view(key, node):
         for v in node:
             for line in dump_view(None, v):
                 yield '- ' + line
+                break
+            for line in dump_view(None, v):
+                yield '  ' + line
     else: 
         if key is not None:
             yield '{}: {}'.format(key, node)
