@@ -24,6 +24,11 @@ def dump_view(key, node):
                 break
             for line in lines:
                 yield '  ' + line
+    elif isinstance(node, bool):
+        if key is not None:
+            yield '{}: {}'.format(key, str(node).lower())
+        else:
+            yield str(node).lower()
     else:
         if key is not None:
             yield '{}: {}'.format(key, node)
