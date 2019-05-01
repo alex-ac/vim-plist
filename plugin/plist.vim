@@ -26,7 +26,6 @@ plugin_root_dir = vim.eval('s:plugin_root_dir')
 python_root_dir = os.path.normpath(os.path.join(plugin_root_dir, '..', 'python'))
 
 sys.path.insert(0, python_root_dir)
-print('python path: {}'.format(sys.path))
 import vim_plist
 EOF
 
