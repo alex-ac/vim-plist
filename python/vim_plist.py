@@ -18,12 +18,13 @@ def dump_view(key, node):
         if key is not None:
             yield key + ':'
         for v in node:
-            for line in dump_view(None, v):
+            lines = dump_view(None, v)
+            for line in lines:
                 yield '- ' + line
                 break
-            for line in dump_view(None, v):
+            for line in lines:
                 yield '  ' + line
-    else: 
+    else:
         if key is not None:
             yield '{}: {}'.format(key, node)
         else:
